@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 header('Content-Type: text/plain; charset=UTF-8');
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+/*if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   http_response_code(405);
   exit('Method Not Allowed');
-}
+}*/
 
 $receivingEmailAddress = 'vickyraghav794@gmail.com';
 
