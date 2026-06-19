@@ -117,7 +117,7 @@
           <div class="col-lg-8 content">
             <h2>Senior PHP Developer &amp; Web Application Specialist</h2>
             <p class="fst-italic py-3">
-              I deliver reliable web solutions for insurance, ERP, healthcare, education, e-commerce, and community platforms by combining clean backend architecture with responsive frontend implementation.
+              I deliver reliable web solutions for insurance, ERP, healthcare, education, e-commerce, and community platforms by combining clean backend architecture with responsive frontend implementation. I have also expanded my knowledge in AI-powered tools, workflow automation, and the management and development of productivity-focused solutions that help streamline business and technical processes.
             </p>
             <div class="row">
               <div class="col-lg-6">
@@ -319,14 +319,46 @@
             </div><!-- Edn Resume Item -->
 
             <div class="resume-item">
-              <h4>Previous Roles (2016 - 2022)</h4>
-              <h5>Harsha Infotech, Radiant Integrity, Dot Com Infoway, Intergy, Vizza Insurance</h5>
-              <p><em>Trichy, Chennai, Madurai, Coimbatore</em></p>
+              <h4>Radiant Integrity Techno Solutions Pvt</h4>
+              <h5>07/2018 - 09/2019</h5>
+              <p><em>Chennai, India</em></p>
               <ul>
-                <li>Built MVC applications in CodeIgniter and Laravel for ERP, insurance, and community platforms.</li>
-                <li>Implemented API integrations, payment gateways, role-based modules, and reporting workflows.</li>
-                <li>Migrated legacy modules and improved application maintainability and performance.</li>
-                <li>Worked in agile teams to deliver stable solutions aligned with client and business requirements.</li>
+                <li>Worked with a technology solutions provider specializing in PHP application development.</li>
+                <li>Designed and developed e-commerce and community-based applications for client requirements.</li>
+                <li>Led the transition of legacy applications to newer frameworks to improve maintainability and performance.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Dot Com Infoway</h4>
+              <h5>12/2019 - 01/2021</h5>
+              <p><em>Madurai, India</em></p>
+              <ul>
+                <li>Contributed to a wide range of web development projects across diverse online solutions.</li>
+                <li>Developed MVC-based applications using the CodeIgniter framework.</li>
+                <li>Integrated MySQL databases to support dynamic content management and backend operations.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Intergy</h4>
+              <h5>01/2021 - 08/2021</h5>
+              <p><em>Coimbatore, India</em></p>
+              <ul>
+                <li>Participated in the development of PHP web applications for business-focused web solutions.</li>
+                <li>Ensured code quality through regular reviews, testing, and implementation best practices.</li>
+                <li>Delivered user-requested features and improvements based on changing business needs.</li>
+              </ul>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Vizza Insurance</h4>
+              <h5>09/2021 - 07/2022</h5>
+              <p><em>Chennai, India</em></p>
+              <ul>
+                <li>Supported the development of PHP applications tailored for insurance process workflows.</li>
+                <li>Worked effectively in an agile team environment to deliver enhancements and fixes.</li>
+                <li>Assisted with database management and application performance optimization.</li>
               </ul>
             </div><!-- Edn Resume Item -->
 
@@ -682,22 +714,26 @@
 
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <input type="text" name="name" id="name-field" class="form-control">
+                  <div class="invalid-feedback d-block" id="name-error"></div>
                 </div>
 
                 <div class="col-md-6">
                   <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <input type="email" class="form-control" name="email" id="email-field">
+                  <div class="invalid-feedback d-block" id="email-error"></div>
                 </div>
 
                 <div class="col-md-12">
                   <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <input type="text" class="form-control" name="subject" id="subject-field">
+                  <div class="invalid-feedback d-block" id="subject-error"></div>
                 </div>
 
                 <div class="col-md-12">
                   <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="10" id="message-field"></textarea>
+                  <div class="invalid-feedback d-block" id="message-error"></div>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -731,7 +767,7 @@
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://astrosoft.ind.in">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+        Designed by <a href="https://astrosoft.ind.in">Astrosoft Solutions</a>
       </div>
     </div>
 
@@ -744,6 +780,7 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -757,6 +794,108 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    $(function () {
+      const $form = $('.php-email-form');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function setError($field, message) {
+        const errorId = '#' + $field.attr('id').replace('-field', '-error');
+        $field.toggleClass('is-invalid', Boolean(message));
+        $(errorId).text(message || '');
+      }
+
+      function validateName() {
+        const $field = $('#name-field');
+        const value = $.trim($field.val());
+
+        if (!value) {
+          setError($field, 'Name is required.');
+          return false;
+        }
+
+        if (value.length < 3) {
+          setError($field, 'Name must be at least 3 characters.');
+          return false;
+        }
+
+        setError($field, '');
+        return true;
+      }
+
+      function validateEmail() {
+        const $field = $('#email-field');
+        const value = $.trim($field.val());
+
+        if (!value) {
+          setError($field, 'Email is required.');
+          return false;
+        }
+
+        if (!emailPattern.test(value)) {
+          setError($field, 'Enter a valid email address.');
+          return false;
+        }
+
+        setError($field, '');
+        return true;
+      }
+
+      function validateSubject() {
+        const $field = $('#subject-field');
+        const value = $.trim($field.val());
+
+        if (!value) {
+          setError($field, 'Subject is required.');
+          return false;
+        }
+
+        if (value.length < 5) {
+          setError($field, 'Subject must be at least 5 characters.');
+          return false;
+        }
+
+        setError($field, '');
+        return true;
+      }
+
+      function validateMessage() {
+        const $field = $('#message-field');
+        const value = $.trim($field.val());
+
+        if (!value) {
+          setError($field, 'Message is required.');
+          return false;
+        }
+
+        if (value.length < 10) {
+          setError($field, 'Message must be at least 10 characters.');
+          return false;
+        }
+
+        setError($field, '');
+        return true;
+      }
+
+      $('#name-field').on('input blur', validateName);
+      $('#email-field').on('input blur', validateEmail);
+      $('#subject-field').on('input blur', validateSubject);
+      $('#message-field').on('input blur', validateMessage);
+
+      $form.on('submit', function (event) {
+        const isValid = [
+          validateName(),
+          validateEmail(),
+          validateSubject(),
+          validateMessage()
+        ].every(Boolean);
+
+        if (!isValid) {
+          event.preventDefault();
+        }
+      });
+    });
+  </script>
 
 </body>
 
