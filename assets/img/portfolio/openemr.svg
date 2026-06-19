@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" role="img" aria-labelledby="title desc">
+  <title id="title">OpenEMR Portfolio Thumbnail</title>
+  <desc id="desc">Custom thumbnail for the OpenEMR project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#e1eefc"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef4fb"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="768" fill="url(#bg)"/>
+  <rect x="140" y="80" width="744" height="608" rx="32" fill="url(#panel)" stroke="#c6d7ea" stroke-width="4"/>
+
+  <circle cx="390" cy="184" r="34" fill="none" stroke="#2aa7df" stroke-width="16"/>
+  <path d="M 415 159 A 34 34 0 0 1 415 209" fill="none" stroke="#7bc4ea" stroke-width="16" stroke-linecap="round"/>
+  <text x="442" y="198" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#4a4a4a">open</text>
+  <text x="583" y="198" font-family="Arial, sans-serif" font-size="54" font-weight="400" fill="#f26739">E</text>
+  <text x="618" y="198" font-family="Arial, sans-serif" font-size="54" font-weight="400" fill="#2a78d1">M</text>
+  <text x="672" y="198" font-family="Arial, sans-serif" font-size="54" font-weight="400" fill="#f26739">R</text>
+
+  <text x="512" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#243447">
+    Electronic Health Record and
+  </text>
+  <text x="512" y="332" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#243447">
+    Medical Practice Management Solution
+  </text>
+
+  <rect x="238" y="402" width="548" height="44" rx="10" fill="#dfe9f6" stroke="#b7c9df"/>
+  <rect x="238" y="474" width="548" height="44" rx="10" fill="#dfe9f6" stroke="#b7c9df"/>
+  <rect x="238" y="546" width="548" height="44" rx="10" fill="#dfe9f6" stroke="#b7c9df"/>
+
+  <rect x="238" y="620" width="548" height="50" rx="12" fill="#1f7aec"/>
+  <text x="512" y="653" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">
+    OpenEMR
+  </text>
+</svg>
